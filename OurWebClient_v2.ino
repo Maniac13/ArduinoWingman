@@ -29,16 +29,18 @@ void setup()
 {
   // initialize serial communications at 9600 bps:
   Serial.begin(9600); 
-
+  Serial.println("BazingaStart");
   while (Ethernet.begin(mac) != 1)
   {
     Serial.println("Error getting IP address via DHCP, trying again...");
     delay(15000);
   }  
+  Serial.println("BazingaEnd");
 }
 
 void loop()
 {
+  Serial.println("BazingaLoop");
   int err =0;
   
   EthernetClient c;
